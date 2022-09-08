@@ -1,0 +1,57 @@
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+
+<idea-plugin>
+
+    <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+    <id>org.intellij.sdk.language</id>
+
+    <!-- Text to display as name on Preferences/Settings | Plugin page -->
+    <name>Octave Language Support</name>
+
+    <!-- Product and plugin compatibility requirements -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+    <!-- Text to display as description on Preferences/Settings | Plugin page -->
+    <description>
+        <![CDATA[
+      Small implementation of minimaly-functional Octave Language Support <br>
+      <br>
+      Way better plugin may be found here (Octave interpreter supports Matlab syntax):
+      https://github.com/kornilova203/matlab-IntelliJ-plugin
+    ]]>
+    </description>
+    <change-notes>
+        <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin.</li>
+        <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
+      </ul>
+    ]]>
+    </change-notes>
+
+    <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+    <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Octave File" implementationClass="com.crewhee.octave.lang.OctaveFileType"
+                  fieldName="INSTANCE"
+                  language="Octave"
+                  extensions="m"
+        />
+        <!--
+          Only required for versions of the IntelliJ Platform prior to v2019.2.
+          Use 'com.intellij.fileTypeFactory' extension point INSTEAD of above 'com.intellij.fileType'.
+          <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
+        -->
+<!--        <lang.parserDefinition language="Octave"-->
+<!--                               implementationClass="com.crewhee.octave.lang.OctaveParserDefinition"-->
+<!--        />-->
+<!--        <lang.syntaxHighlighterFactory language="Octave"-->
+<!--                                       implementationClass="com.crewhee.octave.ide.OctaveSyntaxHighlighterFactory"/>-->
+<!--        <colorSettingsPage implementation="com.crewhee.octave.ide.OctaveColorSettingsPage"/>-->
+<!--        <braceMatcher filetype="Octave" implementationClass="com.crewhee.octave.ide.OctavePairedBraceMatcher"/>-->
+    </extensions>
+
+</idea-plugin>
