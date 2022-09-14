@@ -40,16 +40,12 @@
                   language="Octave"
                   extensions="m"
         />
-        <!--
-          Only required for versions of the IntelliJ Platform prior to v2019.2.
-          Use 'com.intellij.fileTypeFactory' extension point INSTEAD of above 'com.intellij.fileType'.
-          <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
-        -->
-<!--        <lang.parserDefinition language="Octave"-->
-<!--                               implementationClass="com.crewhee.octave.lang.OctaveParserDefinition"-->
-<!--        />-->
-<!--        <lang.syntaxHighlighterFactory language="Octave"-->
-<!--                                       implementationClass="com.crewhee.octave.ide.OctaveSyntaxHighlighterFactory"/>-->
+
+        <lang.parserDefinition language="Octave"
+                               implementationClass="com.crewhee.octave.lang.OctaveParserDefinition"
+        />
+        <lang.syntaxHighlighterFactory language="Octave"
+                                       implementationClass="com.crewhee.octave.ide.OctaveSyntaxHighlighterFactory"/>
 <!--        <colorSettingsPage implementation="com.crewhee.octave.ide.OctaveColorSettingsPage"/>-->
 <!--        <braceMatcher filetype="Octave" implementationClass="com.crewhee.octave.ide.OctavePairedBraceMatcher"/>-->
     </extensions>

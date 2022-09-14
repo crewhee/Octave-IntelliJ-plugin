@@ -1,11 +1,8 @@
 package com.crewhee.octave.lang;
 
-import com.intellij.lang.Language;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import java.util.Set;
 
 public class OctaveTokenType extends IElementType {
@@ -176,8 +173,9 @@ public class OctaveTokenType extends IElementType {
     private static final Set<IElementType> parenthesis = Set.of(LPARENTH, RPARENTH);
 
     private static final Set<IElementType> braces = Set.of(LBRACE, RBRACE);
-
-
+    private static final Set<IElementType> separators = Set.of(
+            COMMA, SEMICOLON, NEWLINE
+    );
 
 
     public OctaveTokenType(@NonNls @NotNull String debugName) {
@@ -578,6 +576,10 @@ public class OctaveTokenType extends IElementType {
     public static boolean isBinOpBool (IElementType t) { return binops3.contains(t); }
     public static boolean isBinOp2(IElementType t) { return binops2.contains(t); }
     public static boolean isBinOp1(IElementType t) { return binops1.contains(t); }
+
+    public static boolean isSeparator(IElementType t) {
+        return separators.contains(t);
+    }
 
     @Override
     public String toString() {
